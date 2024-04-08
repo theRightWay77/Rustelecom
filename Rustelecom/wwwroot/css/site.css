@@ -1,0 +1,94 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.admin-container__chosen-window__redaction {
+    display: flex;
+    flex-direction: column;
+    width: inherit;
+}
+
+.chosen-window__redaction-label {
+    margin-bottom: 30px;
+}
+
+.chosen-window__redaction__form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    margin-bottom: 30px;
+}
+
+.chosen-window__redaction__form-name-label, .chosen-window__redaction__form-author-label, .chosen-window__redaction__form-cost-label, .chosen-window__redaction__form-description-label {
+    width: 15%;
+}
+
+.chosen-window__redaction__form-name-input, .chosen-window__redaction__form-author-input, .chosen-window__redaction__form-cost-input, .chosen-window__redaction__form-description-input {
+    width: 60%
+}
+
+.chosen-window__redaction__form-description {
+    display: flex;
+    flex-direction: row;
+}
+
+.chosen-window__redaction__form-description-input {
+    height: 200px;
+}
+
+.chosen-window__redaction__buttons {
+    display: flex;
+    flex-direction: row;
+    column-gap: 50px;
+}
+
+.chosen-window__redaction__buttons-back-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 35px;
+    width: 100px;
+    background-color: #EBEBEB;
+    color: #AAABAB;
+    border-radius: 4px;
+}
+
+    .chosen-window__redaction__buttons-back-button:hover {
+        text-decoration: none;
+        color: #AAABAB;
+    }
+
+.chosen-window__redaction__buttons-save-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 35px;
+    width: 100px;
+    background-color: #C7E4B1;
+    color: #579A22;
+    border-radius: 4px;
+}
+
+    .chosen-window__redaction__buttons-save-button:hover {
+        text-decoration: none;
+        color: #579A22;
+    }

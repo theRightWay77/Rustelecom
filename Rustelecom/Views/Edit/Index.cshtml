@@ -1,0 +1,26 @@
+﻿@*редактирование товара*@
+
+@model Contract
+<form method="post">
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="row">ФИО</th>
+            <th scope="row">IP</th>
+            <th scope="row">Услуга</th>
+            <th scope="row">Дата</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        <tr scope="col">
+                <td><input name="Name" value="@Model.Name" /></td>
+                <td><input name="IPAddress" value="@Model.IPAddress" /></td>
+                <td><input name="ServiceType" value="@Model.ServiceType" /></td>
+                <td><input name="Date" value="@Model.Date" /></td>
+        </tr>
+
+    </tbody>
+    </table>
+    <button asp-controller="Edit" asp-action="SaveChanges" asp-route-id="@Model.Id" type="submit" class="btn btn-success">Сохранить</button>
+</form>
