@@ -18,15 +18,21 @@ namespace Rustelecom.Controllers
             return View(contract);
         }
         [HttpPost]
-        public IActionResult SaveChanges(int id, string name, string iPAddress, ServiceType serviceType, DateTime date)
+        public IActionResult SaveChanges(int id, string name, string iPAddress, int serviceType, DateTime date)
         {
             Contract contract = ContractRepository.TryGetById(id);
             if(name != null) { contract.Name = name; }
             if(iPAddress != null) { contract.IPAddress = iPAddress; }
-            contract.ServiceType = serviceType;
+
+            if (serviceType == 0) contract.ServiceType = ServiceType.Internet;
+            else if (serviceType == 1) contract.ServiceType = ServiceType.VideoControl;
+            else if (serviceType == 2) contract.ServiceType = ServiceType.IPTelephony;
+
             contract.Date = date;
 
             return RedirectToAction("Index", "Contract");
         }
+
+       
     }
 }

@@ -16,11 +16,27 @@
         <tr scope="col">
                 <td><input name="Name" value="@Model.Name" /></td>
                 <td><input name="IPAddress" value="@Model.IPAddress" /></td>
-                <td><input name="ServiceType" value="@Model.ServiceType" /></td>
-                <td><input name="Date" value="@Model.Date" /></td>
+                <td>
+                    <select name="ServiceType" class="form-select">
+                        <option value="0" selected>Internet</option>
+                        <option value="1">VideoControl</option>
+                        <option value="2">IPTelephony</option>
+                    </select>
+                    <span asp-validation-for="ServiceType"></span>
+                </td>
+                <td><input id="date" type="date" name="Date" value="@Model.Date.Date" /></td>
         </tr>
 
     </tbody>
     </table>
     <button asp-controller="Edit" asp-action="SaveChanges" asp-route-id="@Model.Id" type="submit" class="btn btn-success">Сохранить</button>
 </form>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var dateInput = document.getElementById('date');
+        var today = new Date().toISOString().split('T')[0];
+        dateInput.setAttribute('min', today);
+    });
+</script>

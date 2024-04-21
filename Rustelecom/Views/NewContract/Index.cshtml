@@ -1,0 +1,50 @@
+﻿@*добавление товара*@
+
+@model Contract
+<form method="post">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="row">ФИО</th>
+                <th scope="row">IP</th>
+                <th scope="row">Услуга</th>
+                <th scope="row">Дата</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr scope="col">
+                <td onclick="">
+                    <input type="text" name="Name" required />
+                    <span asp-validation-for="Name"></span>
+                </td>
+                <td>
+                    <input type="text" name="IPAddress" required />
+                    <span asp-validation-for="IPAddress"></span>
+                </td>
+                <td>
+                    <select name="ServiceType" class="form-select">
+                        <option value="0" selected>Internet</option>
+                        <option value="1">VideoControl</option>
+                        <option value="2">IPTelephony</option>
+                    </select>
+                    <span asp-validation-for="ServiceType"></span>
+                </td>
+                <td>
+                    <input  id="date" type="date" name="Date" required data-backdrop="" />
+                    <span asp-validation-for="Date"></span>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <button asp-controller="NewContract" asp-action="SaveNew" type="submit" class="btn btn-success">Сохранить</button>
+</form>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var dateInput = document.getElementById('date');
+        var today = new Date().toISOString().split('T')[0];
+        dateInput.setAttribute('min', today);
+    });
+</script>

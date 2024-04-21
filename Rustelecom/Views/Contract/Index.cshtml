@@ -2,7 +2,7 @@
 @{
     var productSerialNumber = 1;
 }
-<button type="button" class="btn btn-warning">Добавить новый договор</button>
+<a asp-controller="NewContract" asp-action="Index" type="button" class="btn btn-warning">Добавить новый договор</a>
 <table class="table">
     <thead>
         <tr>
@@ -23,7 +23,7 @@
                 <td>@contract.Name</td>
                 <td>@contract.IPAddress</td>
                 <td>@contract.ServiceType</td>
-                <td>@contract.Date</td>        
+                <td>@contract.Date.Date</td>        
                 <td><a asp-controller="Contract" asp-action="ChangeStatus" asp-route-id="@contract.Id" type="button" class="btn btn-info">@contract.Status.ToString()</a></td>
                 <td><a asp-controller="Edit" asp-action="Index" asp-route-id="@contract.Id" type="button" class="btn btn-outline-danger">Редактировать</a></td>
             </tr>
